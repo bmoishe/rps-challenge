@@ -1,9 +1,8 @@
-<h1>Welecome <%= @name %>!</h1>
+<h1>Welcome <%=session[:enter_name]%>!</h1>
 
+<h2>Select a weapon</h2>
 
-<h2>Select Rock Paper or Scissors</h2>
-
-<form action='/results' method=post>  
+<form action='/results' method=post>
   <p><input type="submit" name="choice" value="Rock" checked><br></p>
   <p><input type="submit" name="choice" value="Paper"><br></p>
   <p><input type="submit" name="choice" value="Scissors"></p>

@@ -4,6 +4,6 @@
 feature 'Register name' do
   scenario 'submit name' do
   sign_in_and_play
-    expect(page).to have_content 'Welecome Bob!'
+    expect(page).to have_content 'Welcome Bob!'
   end
 end

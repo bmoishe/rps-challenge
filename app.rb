@@ -2,17 +2,22 @@ require 'sinatra/base'
 
 class Controller < Sinatra::Base
   enable :sessions
+
   get '/' do
-    erb :index
+    erb :mode
   end
 
-  post '/welcome' do
+  post '/game-setup' do
+    session[:mode_type] = params[:mode_type]
+    redirect '/welcome'
+  end
+
+  get '/welcome' do
+    erb :welcome
+  end
+
+  post '/play' do
     session[:enter_name] = params[:enter_name]
-    redirect :play
-  end
-
-  get '/play' do
-    @name = session[:enter_name]
     erb :play
   end
 
@@ -21,9 +26,6 @@ class Controller < Sinatra::Base
     erb :results
   end
 
-  # get '/results' do
-  #   @choice =  session[:choice]
-  #   erb :results
-  # end
+
   run! if app_file == $0
 end

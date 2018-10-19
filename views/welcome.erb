@@ -1,6 +1,5 @@
-<p><h1>Rock, Paper or Scissors</h1></p>
-<p><h2>Choose one</h2></p>
-<form action="/welcome" method="post">
+<p><h1>To play <%=session[:mode_type]%></h1></p>
+<form action="/play" method="post">
   <label for="name">
     Enter your name!
     <input type="text" name="enter_name">

@@ -5,6 +5,6 @@ feature 'Play RPS' do
   scenario 'select rock' do
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content 'You have selected Rock'
+    expect(page).to have_content 'Bob has selected Rock'
   end
 end
