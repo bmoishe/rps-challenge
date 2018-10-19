@@ -16,5 +16,14 @@ class Controller < Sinatra::Base
     erb :play
   end
 
+  post '/results' do
+    session[:choice] = params[:choice]
+    erb :results
+  end
+
+  # get '/results' do
+  #   @choice =  session[:choice]
+  #   erb :results
+  # end
   run! if app_file == $0
 end
