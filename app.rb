@@ -16,13 +16,21 @@ class Controller < Sinatra::Base
     erb :welcome
   end
 
-  post '/play' do
+  post '/store-names' do
     session[:enter_name] = params[:enter_name]
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
-  post '/results' do
+  post '/store-weapon' do
     session[:choice] = params[:choice]
+    redirect '/results'
+  end
+
+  get '/results' do
     erb :results
   end
 
