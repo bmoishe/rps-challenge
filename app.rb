@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require './lib/players.rb'
 
 class Controller < Sinatra::Base
   enable :sessions
-
+  attr_reader :choice1
   get '/' do
     erb :mode
   end
@@ -27,11 +28,18 @@ class Controller < Sinatra::Base
 
   post '/store-weapon' do
     session[:choice] = params[:choice]
+    $bot = Players.new
+
+
     redirect '/results'
   end
 
   get '/results' do
+@choice1 = session[:choice]
+@bot_choice = $bot.bot_choice
+
     erb :results
+
   end
 
   run! if app_file == $0
