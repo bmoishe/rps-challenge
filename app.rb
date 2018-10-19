@@ -34,6 +34,5 @@ class Controller < Sinatra::Base
     erb :results
   end
 
-
   run! if app_file == $0
 end
