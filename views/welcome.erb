@@ -8,6 +8,14 @@ form {text-align: center;}
 </style>
 <p><h1>Enter your name to play <%=session[:mode_type]%> mode</h1></p>
 <form action="/store-names" method="post">
-    <input type="text" name="enter_name">
+    <div>
+        <label for="enter_name"><b>Player 1 Name:</b> </label>
+        <input type="text" name="enter_name" placeholder="Player 1 name">
+    </div>
+    <div>
+        <label for="enter_name2"><b>Player 2 Name:</b> </label>
+        <input type="text" name="enter_name2" placeholder="Player 2 name">
+    </div>
+
     <input type="submit" value="Submit">
 </form>

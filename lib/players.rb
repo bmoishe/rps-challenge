@@ -1,14 +1,11 @@
 class Players
-   # attr_reader :players_choice
+  attr_reader :pname
+  attr_accessor :choice
+  @pchoice = nil
 
-  # def initialize
-  #   @rps =
-  # end
-
-  #
-  # def initialize(c = Controller.new)
-  # @players_choice = c.session[:choice]
-  # end
+  def initialize(pname)
+    @pname = pname
+  end
 
   def bot_choice
    ["Rock", "Paper", "Scissors"].sample

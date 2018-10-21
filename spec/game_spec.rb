@@ -1,42 +1,27 @@
 require 'game'
-
-
-describe Game do
-  subject(:game) { described_class.new }
-  let (:players) {double :players, :bot_choice => "Scissors"}
-  let(:app) { double :controller, :choice1 => "Rock"}
-
-    it 'Player wins' do
-      expect(subject.winner).to eq true
-    end
-end
+require './app'
 
 describe Game do
-  subject(:game) { described_class.new }
-  let (:players) {double :players, :bot_choice => "Rock"}
-  let(:app) { double :controller, :choice1 => "Scissors"}
+  subject(:game) { Game.new("Bob", "Dave")}
+  let (:choice1) { double :controller,:choice => "Scissors"}
+  let(:choice2) { double :controller, :choice => "Rock"}
+  let(:choice3) { double :controller, :choice => "Paper"}
 
-    it 'Player loses' do
-      expect(subject.winner).to eq false
-    end
+  it 'Dave wins' do
+    subject.player1.choice2
+    subject.player2.choice1
+    expect(subject.winner).to eq "#{subject.player2.pname} wins"
+  end
+
+  it 'Bob wins' do
+    subject.player1.choice1
+    subject.player2.choice3
+    expect(subject.winner).to eq "#{subject.player1.pname} wins"
+  end
+
+  it 'Draw' do
+    subject.player1.choice1
+    subject.player2.choice1
+    expect(subject.winner).to eq "Draw"
+  end
 end
-#
-# describe Game do
-#   subject(:game) { described_class.new }
-#   let (:players) {double :players, :bot_choice => "Rock"}
-#   let(:app) { double :controller, :choice1 => "Rock"}
-#
-#     it 'Player loses' do
-#       expect(subject.winner).to eq nil
-#     end
-# end
-
-# require 'players'
-# describe Game do
-#     let (:players) {double :Players, :bot_choice => "Scissors"
-#     let (:controller) {double :Controller, :choice => "Rock"
-#   it "Player 1 should win with Rock if Bot has Scissors" do
-#
-#     expect(["Rock","Paper","Scissor"]).to include(subject.bot_choice)
-#   end
-# end
