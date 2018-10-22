@@ -70,7 +70,7 @@ class Controller < Sinatra::Base
 
     if session[:mode_type] == "Vs"
       @choice2 = @@game.player2.choice
-      @opponent = "Player #{+ @@game.player2.pname}"
+      @opponent = "#{+ @@game.player2.pname}"
     else
       @choice2 = @@game.player1.bot_choice
       @opponent = "Bot"

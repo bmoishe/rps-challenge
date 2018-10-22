@@ -10,29 +10,27 @@ class Game
 
   def winner
 
-    if player1.choice == "Paper" && player2.choice = "Rock"
+    if player1.choice == "Paper" && player2.choice == "Rock"
     	return "#{player1.pname} wins"
     end
 
-    if player1.choice = "Scissors" && player2.choice = "Paper"
+    if player1.choice == "Scissors" && player2.choice == "Paper"
     	return "#{player1.pname} wins"
     end
 
-    if player1.choice = "Rock" && player2.choice = "Scissors"
+    if player1.choice == "Rock" && player2.choice == "Scissors"
       return "#{player1.pname} wins"
     end
 
-    if player2.choice = "Paper" && player1.choice = "Rock"
+    if player2.choice == "Paper" && player1.choice == "Rock"
       return "#{player2.pname} wins"
     end
 
-    if player2.choice = "Scissors" && player1.choice = "Paper"
-
+    if player2.choice == "Scissors" && player1.choice == "Paper"
     	return "#{player2.pname} wins"
     end
 
-    if player2.choice = "Rock" && player1.choice = "Scissors"
-
+    if player2.choice == "Rock" && player1.choice == "Scissors"
       return "#{player2.pname} wins"
     end
 
